@@ -70,11 +70,11 @@ Este plugin esta licenciado como GPL.
 * Possuir uma conta no [Upnid](https://upnid.com/).
 * Criar uma **Chave de API** na Upnid, dando permissão para **Criar, visualizar, alterar e excluir** Produtos, Pagamentos e Webhooks.
 
-= Quanto custa o Upnid? =
+= Quanto custa para usar a Upnid? =
 
 Confira os preços em "[Upnid](https://upnid.com/)".
 
-= O pedido foi pago e ficou com o status de "processando" e não como "concluído", isto esta certo ? =
+= O pedido foi pago e ficou com o status de "processando" e não como "concluído", isto está certo? =
 
 Sim, esta certo e significa que o plugin esta trabalhando como deveria.
 
