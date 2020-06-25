@@ -30,7 +30,7 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 
 ### Como instalar?
 
-##### Instalação do plugin:
+#### Instalação do plugin:
 
 * Envie os arquivos do plugin para a pasta wp-content/plugins, ou instale usando o instalador de plugins do WordPress.
 * Ative o plugin.
@@ -53,21 +53,21 @@ Pronto, sua loja já pode receber pagamentos pela Upnid.
 
 ### FAQ
 
-##### Qual é a licença do plugin?
+#### Qual é a licença do plugin?
 
 Este plugin esta licenciado como GPL.
 
-##### O que eu preciso para utilizar este plugin?
+#### O que eu preciso para utilizar este plugin?
 
 * Ter instalado o plugin WooCommerce 2.2 ou superior.
 * Possuir uma conta no [Upnid](https://upnid.com/).
 * Criar uma **Chave de API** na Upnid, dando permissão para **Criar, visualizar, alterar e excluir** Produtos, Pagamentos e Webhooks.
 
-##### Quanto custa para usar a Upnid?
+#### Quanto custa para usar a Upnid?
 
 Confira os preços em "[Upnid](https://upnid.com/)".
 
-##### O pedido foi pago e ficou com o status de "processando" e não como "concluído", isto está certo?
+#### O pedido foi pago e ficou com o status de "processando" e não como "concluído", isto está certo?
 
 Sim, esta certo e significa que o plugin esta trabalhando como deveria.
 
@@ -75,18 +75,18 @@ Todo gateway de pagamentos no WooCommerce deve mudar o status do pedido para "pr
 
 Para produtos baixáveis a configuração padrão do WooCommerce é permitir o acesso apenas quando o pedido tem o status "concluído", entretanto nas configurações do WooCommerce na aba *Produtos* é possível ativar a opção **"Conceder acesso para download do produto após o pagamento"** e assim liberar o download quando o status do pedido esta como "processando".
 
-##### É obrigatório enviar todos os campos para processar o pagamento?
+#### É obrigatório enviar todos os campos para processar o pagamento?
 
 Não é obrigatório caso você venda digital goods.
 
 É possível remover os campos de endereço, empresa e telefone, mantendo apenas nome, sobrenome e e-mail utilizando o plugin [WooCommerce Digital Goods Checkout](https://wordpress.org/plugins/wc-digital-goods-checkout/).
 
-##### Problemas com a integração?
+#### Problemas com a integração?
 
 Primeiro de tudo ative a opção **Log de depuração** e tente realizar o pagamento novamente.
 
 Feito isso copie o conteúdo do log e salve usando o [pastebin.com](http://pastebin.com) ou o [gist.github.com](http://gist.github.com), depois basta abrir um tópico de suporte [aqui](http://wordpress.org/support/plugin/upnid-woocommerce).
 
-##### Mais dúvidas relacionadas ao funcionamento do plugin?
+#### Mais dúvidas relacionadas ao funcionamento do plugin?
 
 Entre em contato [clicando aqui](http://wordpress.org/support/plugin/upnid-woocommerce).
