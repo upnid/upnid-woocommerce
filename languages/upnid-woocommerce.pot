@@ -1,0 +1,488 @@
+# Copyright (C) 2019 Upnid, Claudio Sanches
+# This file is distributed under the GPLv2 or later.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Upnid for WooCommerce 2.0.17\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/upnid-"
+"woocommerce\n"
+"POT-Creation-Date: 2020-05-04 05:22+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Loco https://localise.biz/\n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;"
+
+#: upnid-woocommerce.php:162
+msgid "Bank Slip Settings"
+msgstr ""
+
+#: upnid-woocommerce.php:164
+msgid "Credit Card Settings"
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:165
+msgid "Banking Ticket URL"
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:166
+#: includes/class-wc-upnid-credit-card-gateway.php:148
+msgid "Credit Card"
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:167
+#: includes/class-wc-upnid-credit-card-gateway.php:172
+#: templates/credit-card/payment-form.php:56
+msgid "Installments"
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:168
+msgid "Total paid"
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:267
+msgid ""
+"Missing credit card data, please review your data and try again or contact "
+"us for assistance."
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:321
+msgid ""
+"Missing person type and document data, please review your data and try again "
+"or contact us for assistance."
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:397
+msgid "Oops... Something went wrong on our side. Could you please try again?"
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:447
+msgid ""
+"Oops... Looks like we could not proceed with your payment. Could you check "
+"your infos and try again?"
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:523
+msgid "Upnid Request Failure"
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:630
+msgid "Upnid: The transaction was authorized."
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:635
+msgid ""
+"Upnid: A refund was requested for this transaction. Waiting for refund "
+"confirmation."
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:639
+msgid "Upnid: The transaction is being processed."
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:644
+msgid "Upnid: Transaction paid."
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:652
+msgid "Upnid: The banking ticket was issued but not paid yet."
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:656
+msgid "Upnid: The transaction was rejected by the card company or by fraud."
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:663
+#, php-format
+msgid ""
+"The transaction for order %s was rejected by the card company or by fraud"
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:664
+msgid "Transaction failed"
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:665
+#, php-format
+msgid ""
+"Order %1$s has been marked as failed, because the transaction was rejected "
+"by the card company or by fraud, for more details, see %2$s."
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:670
+msgid ""
+"Upnid: The transaction was disputed by the credit card company or by the "
+"customer."
+msgstr ""
+
+#. %s transaction details url
+#: includes/class-wc-upnid-api.php:677
+#, php-format
+msgid "The transaction for order %s was disputed"
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:678
+msgid "Transaction disputed"
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:679
+#, php-format
+msgid ""
+"Order %1$s has been marked as disputed, because the transaction was disputed "
+"by the credit card company or by the customer, for more details, see %2$s."
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:684
+msgid "Upnid: The transaction was refunded."
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:690
+#, php-format
+msgid "The transaction for order %s refunded"
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:691
+msgid "Transaction refunded"
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:692
+#, php-format
+msgid ""
+"Order %1$s has been marked as refunded by Upnid, for more details, see %2$s."
+msgstr ""
+
+#: includes/class-wc-upnid-banking-ticket-gateway.php:52
+msgid "Upnid - Banking Ticket"
+msgstr ""
+
+#: includes/class-wc-upnid-banking-ticket-gateway.php:53
+msgid "Accept banking ticket payments using Upnid."
+msgstr ""
+
+#: includes/class-wc-upnid-banking-ticket-gateway.php:114
+#: includes/class-wc-upnid-credit-card-gateway.php:138
+msgid "Enable/Disable"
+msgstr ""
+
+#: includes/class-wc-upnid-banking-ticket-gateway.php:116
+msgid "Enable Upnid Banking Ticket"
+msgstr ""
+
+#: includes/class-wc-upnid-banking-ticket-gateway.php:120
+#: includes/class-wc-upnid-credit-card-gateway.php:144
+msgid "Title"
+msgstr ""
+
+#: includes/class-wc-upnid-banking-ticket-gateway.php:122
+#: includes/class-wc-upnid-credit-card-gateway.php:146
+msgid "This controls the title which the user sees during checkout."
+msgstr ""
+
+#: includes/class-wc-upnid-banking-ticket-gateway.php:124
+msgid "Banking Ticket"
+msgstr ""
+
+#: includes/class-wc-upnid-banking-ticket-gateway.php:127
+#: includes/class-wc-upnid-credit-card-gateway.php:151
+msgid "Description"
+msgstr ""
+
+#: includes/class-wc-upnid-banking-ticket-gateway.php:129
+#: includes/class-wc-upnid-credit-card-gateway.php:153
+msgid "This controls the description which the user sees during checkout."
+msgstr ""
+
+#: includes/class-wc-upnid-banking-ticket-gateway.php:131
+msgid "Pay with Banking Ticket"
+msgstr ""
+
+#: includes/class-wc-upnid-banking-ticket-gateway.php:134
+#: includes/class-wc-upnid-credit-card-gateway.php:158
+msgid "Integration Settings"
+msgstr ""
+
+#: includes/class-wc-upnid-banking-ticket-gateway.php:139
+#: includes/class-wc-upnid-credit-card-gateway.php:163
+msgid "Upnid API Key"
+msgstr ""
+
+#: includes/class-wc-upnid-banking-ticket-gateway.php:141
+#: includes/class-wc-upnid-credit-card-gateway.php:165
+#, php-format
+msgid ""
+"Please enter your Upnid API Key. This is needed to process the payment and "
+"notifications. Is possible get your API Key in %s."
+msgstr ""
+
+#: includes/class-wc-upnid-banking-ticket-gateway.php:141
+#: includes/class-wc-upnid-credit-card-gateway.php:165
+msgid "Upnid Dashboard > My Account page"
+msgstr ""
+
+#: includes/class-wc-upnid-banking-ticket-gateway.php:148
+#: includes/class-wc-upnid-credit-card-gateway.php:236
+msgid "Gateway Testing"
+msgstr ""
+
+#: includes/class-wc-upnid-banking-ticket-gateway.php:153
+#: includes/class-wc-upnid-credit-card-gateway.php:241
+msgid "Debug Log"
+msgstr ""
+
+#: includes/class-wc-upnid-banking-ticket-gateway.php:155
+#: includes/class-wc-upnid-credit-card-gateway.php:243
+msgid "Enable logging"
+msgstr ""
+
+#: includes/class-wc-upnid-banking-ticket-gateway.php:157
+#: includes/class-wc-upnid-credit-card-gateway.php:245
+#, php-format
+msgid "Log Upnid events, such as API requests. You can check the log in %s"
+msgstr ""
+
+#: includes/class-wc-upnid-banking-ticket-gateway.php:157
+#: includes/class-wc-upnid-credit-card-gateway.php:245
+msgid "System Status &gt; Logs"
+msgstr ""
+
+#: includes/class-wc-upnid-credit-card-gateway.php:71
+msgid "Upnid - Credit Card"
+msgstr ""
+
+#: includes/class-wc-upnid-credit-card-gateway.php:72
+msgid "Accept credit card payments using Upnid."
+msgstr ""
+
+#: includes/class-wc-upnid-credit-card-gateway.php:140
+msgid "Enable Upnid Credit Card"
+msgstr ""
+
+#: includes/class-wc-upnid-credit-card-gateway.php:155
+msgid "Pay with Credit Card"
+msgstr ""
+
+#: includes/class-wc-upnid-credit-card-gateway.php:177
+msgid "Number of Installment"
+msgstr ""
+
+#: includes/class-wc-upnid-credit-card-gateway.php:181
+msgid "Maximum number of installments possible with payments by credit card."
+msgstr ""
+
+#: includes/class-wc-upnid-credit-card-gateway.php:199
+msgid "Smallest Installment"
+msgstr ""
+
+#: includes/class-wc-upnid-credit-card-gateway.php:201
+msgid ""
+"Please enter the value of the smallest installment, Note: it can not be "
+"lower than 1."
+msgstr ""
+
+#: includes/class-wc-upnid-credit-card-gateway.php:206
+msgid "Interest rate"
+msgstr ""
+
+#: includes/class-wc-upnid-credit-card-gateway.php:208
+msgid ""
+"Please enter with the interest rate amount. Note: use 0 to not charge "
+"interest."
+msgstr ""
+
+#: includes/class-wc-upnid-credit-card-gateway.php:213
+msgid "Free Installments"
+msgstr ""
+
+#: includes/class-wc-upnid-credit-card-gateway.php:217
+msgid "Number of installments with interest free."
+msgstr ""
+
+#: includes/class-wc-upnid-credit-card-gateway.php:220
+msgctxt "no free installments"
+msgid "None"
+msgstr ""
+
+#: includes/class-wc-upnid-my-account.php:45
+msgid "Print Banking Ticket"
+msgstr ""
+
+#: templates/banking-ticket/checkout-instructions.php:17
+msgid ""
+"After clicking \"Place order\" you will have access to banking banking "
+"ticket which you can print and pay in your internet banking or in a lottery "
+"retailer."
+msgstr ""
+
+#: templates/banking-ticket/checkout-instructions.php:20
+msgid "Note: The order will be confirmed only after the payment approval."
+msgstr ""
+
+#: templates/banking-ticket/payment-instructions.php:16
+#: templates/banking-ticket/emails/html-instructions.php:21
+msgid "Pay the banking ticket"
+msgstr ""
+
+#: templates/banking-ticket/payment-instructions.php:16
+msgid "Please click in the following button to view your banking ticket."
+msgstr ""
+
+#: templates/banking-ticket/payment-instructions.php:16
+msgid ""
+"You can print and pay in your internet banking or in a lottery retailer."
+msgstr ""
+
+#: templates/banking-ticket/payment-instructions.php:16
+#: templates/banking-ticket/emails/html-instructions.php:24
+#: templates/banking-ticket/emails/plain-instructions.php:26
+msgid ""
+"After we receive the banking ticket payment confirmation, your order will be "
+"processed."
+msgstr ""
+
+#: templates/credit-card/payment-form.php:26
+msgid "Card Holder Name"
+msgstr ""
+
+#: templates/credit-card/payment-form.php:32
+msgid "Card Number"
+msgstr ""
+
+#: templates/credit-card/payment-form.php:41
+msgid "Expiry (MM/YY)"
+msgstr ""
+
+#: templates/credit-card/payment-form.php:44
+msgid "MM / YY"
+msgstr ""
+
+#: templates/credit-card/payment-form.php:48
+msgid "Card Code"
+msgstr ""
+
+#: templates/credit-card/payment-form.php:50
+msgid "CVC"
+msgstr ""
+
+#: templates/credit-card/payment-form.php:60
+msgid "Please, select the number of installments"
+msgstr ""
+
+#: templates/credit-card/payment-form.php:67
+#, php-format
+msgid "(total of %s)"
+msgstr ""
+
+#: templates/credit-card/payment-form.php:67
+msgid "(interest-free)"
+msgstr ""
+
+#: templates/credit-card/payment-form.php:70
+#, php-format
+msgid "%1$dx of %2$s %3$s"
+msgstr ""
+
+#: templates/credit-card/payment-instructions.php:18
+#: templates/credit-card/emails/html-instructions.php:17
+#: templates/credit-card/emails/plain-instructions.php:18
+#, php-format
+msgid "Payment successfully made using %1$s credit card in %2$s."
+msgstr ""
+
+#: includes/admin/views/html-notice-currency-not-supported.php:15
+msgid "Upnid Disabled"
+msgstr ""
+
+#: includes/admin/views/html-notice-currency-not-supported.php:15
+#, php-format
+msgid "Currency %s is not supported. Works only with Brazilian Real."
+msgstr ""
+
+#: includes/admin/views/html-notice-missing-extra-checkout-fields.php:22
+#: includes/admin/views/html-notice-missing-woocommerce.php:22
+#: includes/admin/views/html-notice-person-type-extra-checkout-fields.php:16
+msgid "Upnid WooCommerce"
+msgstr ""
+
+#: includes/admin/views/html-notice-missing-extra-checkout-fields.php:22
+msgid "depends on the last version of Brazilian Market on WooCommerce to work!"
+msgstr ""
+
+#: includes/admin/views/html-notice-missing-extra-checkout-fields.php:25
+msgid "Activate Brazilian Market on WooCommerce"
+msgstr ""
+
+#: includes/admin/views/html-notice-missing-extra-checkout-fields.php:28
+#: includes/admin/views/html-notice-missing-extra-checkout-fields.php:30
+msgid "Install Brazilian Market on WooCommerce"
+msgstr ""
+
+#: includes/admin/views/html-notice-missing-ssl.php:16
+msgid "Warning"
+msgstr ""
+
+#: includes/admin/views/html-notice-missing-ssl.php:17
+msgid ""
+"You need to enable SSL (HTTPS) on this domain in order to offer a secure "
+"checkout to your customers."
+msgstr ""
+
+#: includes/admin/views/html-notice-missing-ssl.php:19
+msgid "Click here to know more."
+msgstr ""
+
+#: includes/admin/views/html-notice-missing-woocommerce.php:22
+msgid "depends on the last version of WooCommerce to work!"
+msgstr ""
+
+#: includes/admin/views/html-notice-missing-woocommerce.php:25
+msgid "Activate WooCommerce"
+msgstr ""
+
+#: includes/admin/views/html-notice-missing-woocommerce.php:28
+#: includes/admin/views/html-notice-missing-woocommerce.php:30
+msgid "Install WooCommerce"
+msgstr ""
+
+#: includes/admin/views/html-notice-person-type-extra-checkout-fields.php:16
+msgid ""
+"depends on a selected person type on Brazilian Market on WooCommerce to work!"
+" We selected Physical and Juridic as default."
+msgstr ""
+
+#: templates/banking-ticket/emails/html-instructions.php:15
+#: templates/banking-ticket/emails/plain-instructions.php:14
+#: templates/credit-card/emails/html-instructions.php:15
+#: templates/credit-card/emails/plain-instructions.php:14
+msgid "Payment"
+msgstr ""
+
+#: templates/banking-ticket/emails/html-instructions.php:18
+#: templates/banking-ticket/emails/plain-instructions.php:18
+msgid ""
+"Please use the link below to view your banking ticket, you can print and pay "
+"in your internet banking or in a lottery retailer:"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Upnid for WooCommerce"
+msgstr ""
+
+#. Description of the plugin
+msgid "Upnid payment gateway for WooCommerce."
+msgstr ""
+
+#. URI of the plugin
+msgid "https://github.com/upnid/upnid-woocommerce"
+msgstr ""
+
+#. Author of the plugin
+msgid "Upnid"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://upnid.com"
+msgstr ""
