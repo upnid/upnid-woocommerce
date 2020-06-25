@@ -26,14 +26,14 @@ class WC_Upnid_API {
 	 *
 	 * @var string
 	 */
-	protected $api_url = 'https://api.upnidstage.com/2020-03/graphql';
+	protected $api_url = 'https://api.upnid.com/2020-06/graphql';
 	
 	/**
 	 * Dashboard URL.
 	 *
 	 * @var string
 	 */
-	public $dashboard_url = 'https://dash.upnidstage.com/payments/view/';
+	public $dashboard_url = 'https://next.upnid.com/payments/view/';
 	
 	/**
 	 * Constructor.

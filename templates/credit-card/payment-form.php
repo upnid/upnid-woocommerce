@@ -12,13 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<style>
-    .jp-card .jp-card-front, .jp-card .jp-card-back {
-        background: #226DE6 !important;
-    }
-</style>
-
-<div class="card-wrapper" style="margin-bottom:15px;"></div>
+<div class="card-wrapper" style="margin-bottom:15px; margin-top: 15px;"></div>
 
 <form action="" id="upnid">
     <fieldset id="upnid-credit-card-form">

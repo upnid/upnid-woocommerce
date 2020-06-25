@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Upnid for WooCommerce
+ * Plugin Name: Upnid
  * Plugin URI: https://github.com/upnid/upnid-woocommerce
  * Description: Upnid payment gateway for WooCommerce.
  * Author: Upnid

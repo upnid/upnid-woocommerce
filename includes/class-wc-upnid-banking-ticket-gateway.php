@@ -51,7 +51,7 @@ class WC_Upnid_Banking_Ticket_Gateway extends WC_Payment_Gateway {
 		$this->has_fields = true;
 		$this->method_title = __( 'Upnid - Banking Ticket', 'upnid-woocommerce' );
 		$this->method_description = __( 'Accept banking ticket payments using Upnid.', 'upnid-woocommerce' );
-		$this->view_transaction_url = 'https://dash.upnidstage.com/payments/view/%s';
+		$this->view_transaction_url = 'https://next.upnid.com/payments/view/%s';
 		
 		// Load the form fields.
 		$this->init_form_fields();
@@ -138,7 +138,7 @@ class WC_Upnid_Banking_Ticket_Gateway extends WC_Payment_Gateway {
 			'api_key'     => array(
 				'title'             => __( 'Upnid API Key', 'upnid-woocommerce' ),
 				'type'              => 'text',
-				'description'       => sprintf( __( 'Please enter your Upnid API Key. This is needed to process the payment and notifications. Is possible get your API Key in %s.', 'upnid-woocommerce' ), '<a href="https://dashboard.pagar.me/">' . __( 'Upnid Dashboard > My Account page', 'upnid-woocommerce' ) . '</a>' ),
+				'description'       => sprintf( __( 'Please enter your Upnid API Key. This is needed to process the payment and notifications. Is possible get your API Key in %s.', 'upnid-woocommerce' ), '<a href="https://next.upnid.com/developer/api-keys">' . __( 'Upnid Dashboard > My Account page', 'upnid-woocommerce' ) . '</a>' ),
 				'default'           => '',
 				'custom_attributes' => array(
 					'required' => 'required',

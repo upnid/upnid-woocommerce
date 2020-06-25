@@ -1,21 +1,21 @@
-=== Upnid for WooCommerce ===
-Contributors: upnid, ronaldo_scotti
+=== Upnid ===
+Contributors: upnid, ronaldoscotti
 Tags: woocommerce, upnid, payment
 Requires at least: 4.0
-Tested up to: 5.4
+Tested up to: 5.4.2
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Receba pagamentos por cartão de crédito e boleto bancário utilizando a Upnid
+Receba pagamentos por cartão de crédito e boleto bancário utilizando a Upnid. Vender pela Internet nunca foi tão simples!
 
 == Description ==
 
-A [Upnid](https://upnid.com/) é a melhor forma de receber pagamentos online por cartão de crédito e boleto bancário, sendo possível o cliente fazer todo o pagamento sem sair da sua loja WooCommerce.
+A [Upnid](https://upnid.com/) é a solução mais eficiente para você receber pagamentos pela Internet por cartão de crédito e boleto bancário, sem que seu cliente saia da sua loja Woocommerce.
 
 = Compatibilidade =
 
-Compatível com desde a versão 2.2.x do WooCommerce.
+Compatível desde a versão 2.2.x do WooCommerce.
 
 Este plugin funciona integrado com o [WooCommerce Extra Checkout Fields for Brazil](http://wordpress.org/plugins/woocommerce-extra-checkout-fields-for-brazil/), desta forma é possível enviar documentos do cliente como "CPF" ou "CNPJ", além dos campos "número" e "bairro" do endereço. Caso você queira remover todos os campos adicionais de endereço para vender Digital Goods, é possível utilizar o plugin [WooCommerce Digital Goods Checkout](https://wordpress.org/plugins/wc-digital-goods-checkout/).
 
@@ -44,7 +44,7 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 
 = Requerimentos: =
 
-É necessário possuir uma conta no [Upnid](https://upnid.com/) e ter instalado o [WooCommerce](http://wordpress.org/plugins/woocommerce/).
+É necessário possuir uma conta na [Upnid](https://upnid.com/) e ter instalado o [WooCommerce](http://wordpress.org/plugins/woocommerce/).
 
 = Configurações do Plugin: =
 
@@ -52,9 +52,11 @@ Com o plugin instalado acesse o admin do WordPress e entre em "WooCommerce" > "C
 
 Habilite a opção que você deseja, preencha o campo **Chave de API** com a chave que você criar dentro da sua conta na Upnid em **Desenvolvedor**/**API Keys**.
 
+Essa API Key deve ter permissão para **Criar, visualizar, alterar e excluir** Produtos, Pagamentos e Webhooks.
+
 Também será necessário utilizar o plugin [WooCommerce Extra Checkout Fields for Brazil](http://wordpress.org/plugins/woocommerce-extra-checkout-fields-for-brazil/) para poder enviar campos de CPF e CNPJ.
 
-Pronto, sua loja já pode receber pagamentos pelo Upnid.
+Pronto, sua loja já pode receber pagamentos pela Upnid.
 
 == Frequently Asked Questions ==
 
@@ -66,8 +68,7 @@ Este plugin esta licenciado como GPL.
 
 * Ter instalado o plugin WooCommerce 2.2 ou superior.
 * Possuir uma conta no [Upnid](https://upnid.com/).
-* Pegar sua **Chave de API** na Upnid.
-* Desativar a opção **Manter Estoque (minutos)** do WooCommerce.
+* Criar uma **Chave de API** na Upnid, dando permissão para **Criar, visualizar, alterar e excluir** Produtos, Pagamentos e Webhooks.
 
 = Quanto custa o Upnid? =
 
@@ -98,8 +99,8 @@ Entre em contato [clicando aqui](http://wordpress.org/support/plugin/upnid-wooco
 
 == Screenshots ==
 
-1. Exemplo de checkout com cartão de crédito e boleto bancário do Upnid no tema Storefront.
-2. Exemplo do Checkout Upnid para cartão de crédito.
+1. Exemplo de checkout da Upnid com cartão de crédito no tema Storefront.
+2. Exemplo de checkout da Upnid com boleto bancário no tema Storefront.
 3. Configurações para boleto bancário.
 4. Configurações para cartão de crédito.
 
@@ -107,4 +108,4 @@ Entre em contato [clicando aqui](http://wordpress.org/support/plugin/upnid-wooco
 
 = 1.0.0 =
 
-* Versão incial do plugin.
+* Versão inicial do plugin.
