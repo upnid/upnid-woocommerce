@@ -162,7 +162,7 @@ class WC_Upnid_Credit_Card_Gateway extends WC_Payment_Gateway {
 			'api_key'              => array(
 				'title'             => __( 'Upnid API Key', 'upnid-woocommerce' ),
 				'type'              => 'text',
-				'description'       => sprintf( __( 'Please enter your Upnid API Key. This is needed to process the payment and notifications. Is possible get your API Key in %s.', 'upnid-woocommerce' ), '<a href="https://next.upnid.com/developer/api-keys">' . __( 'Upnid Dashboard > My Account page', 'upnid-woocommerce' ) . '</a>' ),
+				'description'       => sprintf( __( 'Please enter your Upnid API Key. This is needed to process the payment and notifications. This API Key must have permissions to create, update and delete products, payments and webhooks. It is possible get your API Key in %s.', 'upnid-woocommerce' ), '<a href="https://next.upnid.com/developer/api-keys">' . __( 'Upnid Dashboard > My Account page', 'upnid-woocommerce' ) . '</a>' ),
 				'default'           => '',
 				'custom_attributes' => array(
 					'required' => 'required',

@@ -5,17 +5,17 @@ msgstr ""
 "Project-Id-Version: Upnid for WooCommerce 2.0.17\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/upnid-"
 "woocommerce\n"
-"POT-Creation-Date: 2020-05-04 05:22+0000\n"
+"POT-Creation-Date: 2020-06-30 15:05+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-06-19 16:12-0300\n"
+"PO-Revision-Date: 2020-06-30 15:08+0000\n"
 "Last-Translator: Ronaldo Scotti\n"
 "Language-Team: Português do Brasil\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Loco https://localise.biz/\n"
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Loco-Version: 2.3.3; wp-5.4.1\n"
+"X-Loco-Version: 2.4.0; wp-5.4.2"
 
 #: upnid-woocommerce.php:162
 msgid "Bank Slip Settings"
@@ -36,7 +36,7 @@ msgstr "Cartão de Crédito"
 
 #: includes/class-wc-upnid-api.php:167
 #: includes/class-wc-upnid-credit-card-gateway.php:172
-#: templates/credit-card/payment-form.php:56
+#: templates/credit-card/payment-form.php:50
 msgid "Installments"
 msgstr "Parcelas"
 
@@ -44,7 +44,7 @@ msgstr "Parcelas"
 msgid "Total paid"
 msgstr "Total pago"
 
-#: includes/class-wc-upnid-api.php:267
+#: includes/class-wc-upnid-api.php:269
 msgid ""
 "Missing credit card data, please review your data and try again or contact "
 "us for assistance."
@@ -52,7 +52,7 @@ msgstr ""
 "Dados de cartão de crédito ausentes, revise os dados e tente novamente ou "
 "entre em contato conosco para obter assistência."
 
-#: includes/class-wc-upnid-api.php:321
+#: includes/class-wc-upnid-api.php:323
 msgid ""
 "Missing person type and document data, please review your data and try again "
 "or contact us for assistance."
@@ -60,13 +60,15 @@ msgstr ""
 "Tipo de pessoa e documentos ausentes. Revise os dados e tente novamente ou "
 "entre em contato conosco para obter assistência."
 
-#: includes/class-wc-upnid-api.php:397
-msgid "Oops... Something went wrong on our side. Could you please try again?"
+#: includes/class-wc-upnid-api.php:399
+msgid ""
+"Oops... Something went wrong. Could you please validated the data that you "
+"have inputed and try again?"
 msgstr ""
-"Ops... algo deu errado do lado de cá. Você poderia tentar novamente, por "
-"favor?"
+"Oops... algo deu errado. Poderia conferir se os dados que você informou "
+"estão corretos e tentar novamente?"
 
-#: includes/class-wc-upnid-api.php:447
+#: includes/class-wc-upnid-api.php:449
 msgid ""
 "Oops... Looks like we could not proceed with your payment. Could you check "
 "your infos and try again?"
@@ -74,15 +76,15 @@ msgstr ""
 "Ops... parece que não foi possível prosseguir com seu pagamento. Você "
 "poderia verificar suas informações e tentar novamente, por favor?"
 
-#: includes/class-wc-upnid-api.php:523
+#: includes/class-wc-upnid-api.php:530
 msgid "Upnid Request Failure"
 msgstr "Houve uma falha na requisição"
 
-#: includes/class-wc-upnid-api.php:630
+#: includes/class-wc-upnid-api.php:643
 msgid "Upnid: The transaction was authorized."
 msgstr "Upnid: A transação foi aprovada."
 
-#: includes/class-wc-upnid-api.php:635
+#: includes/class-wc-upnid-api.php:648
 msgid ""
 "Upnid: A refund was requested for this transaction. Waiting for refund "
 "confirmation."
@@ -90,25 +92,26 @@ msgstr ""
 "Upnid: Um reembolso foi solicitado para essa transação. Aguardando "
 "confirmação do reembolso."
 
-#: includes/class-wc-upnid-api.php:639
+#: includes/class-wc-upnid-api.php:652
 msgid "Upnid: The transaction is being processed."
 msgstr "Upnid: A transação está sendo processada."
 
-#: includes/class-wc-upnid-api.php:644
+#: includes/class-wc-upnid-api.php:657
 msgid "Upnid: Transaction paid."
 msgstr "Upnid: Transação paga."
 
-#: includes/class-wc-upnid-api.php:652
+#: includes/class-wc-upnid-api.php:665
 msgid "Upnid: The banking ticket was issued but not paid yet."
 msgstr "Upnid: O boleto foi gerado mas ainda não foi pago."
 
-#: includes/class-wc-upnid-api.php:656
+#: includes/class-wc-upnid-api.php:669
 msgid "Upnid: The transaction was rejected by the card company or by fraud."
 msgstr ""
 "Upnid: A transação foi rejeitada pela empresa de cartão de crédito ou por "
 "fraude."
 
-#: includes/class-wc-upnid-api.php:663
+#. %s transaction details url
+#: includes/class-wc-upnid-api.php:676
 #, php-format
 msgid ""
 "The transaction for order %s was rejected by the card company or by fraud"
@@ -116,11 +119,11 @@ msgstr ""
 "A transação para o pedido %s foi rejeitada pela emissora do cartão de "
 "crédito ou por fraude."
 
-#: includes/class-wc-upnid-api.php:664
+#: includes/class-wc-upnid-api.php:677
 msgid "Transaction failed"
 msgstr "Transação com erro"
 
-#: includes/class-wc-upnid-api.php:665
+#: includes/class-wc-upnid-api.php:678
 #, php-format
 msgid ""
 "Order %1$s has been marked as failed, because the transaction was rejected "
@@ -129,7 +132,7 @@ msgstr ""
 "O pedido %1$s foi marcado como com falha, por que a transação foi rejeitada "
 "pela emissora do cartão de crédito. Para mais informações, veja %2$s."
 
-#: includes/class-wc-upnid-api.php:670
+#: includes/class-wc-upnid-api.php:683
 msgid ""
 "Upnid: The transaction was disputed by the credit card company or by the "
 "customer."
@@ -137,16 +140,16 @@ msgstr ""
 "Upnid: A transação foi disputada pela emissora do cartão ou pelo cliente."
 
 #. %s transaction details url
-#: includes/class-wc-upnid-api.php:677
+#: includes/class-wc-upnid-api.php:690
 #, php-format
 msgid "The transaction for order %s was disputed"
 msgstr "A transação do pedido %s foi disputada"
 
-#: includes/class-wc-upnid-api.php:678
+#: includes/class-wc-upnid-api.php:691
 msgid "Transaction disputed"
 msgstr "Transação disputada"
 
-#: includes/class-wc-upnid-api.php:679
+#: includes/class-wc-upnid-api.php:692
 #, php-format
 msgid ""
 "Order %1$s has been marked as disputed, because the transaction was disputed "
@@ -155,20 +158,20 @@ msgstr ""
 "O pedido %1$s foi marcado como disputado, porque a transação foi disputada "
 "pela emissora do cartão ou pelo cliente. Para mais detalhes, veja %2$s."
 
-#: includes/class-wc-upnid-api.php:684
+#: includes/class-wc-upnid-api.php:697
 msgid "Upnid: The transaction was refunded."
 msgstr "Upnid: A transação foi reembolsada."
 
-#: includes/class-wc-upnid-api.php:690
+#: includes/class-wc-upnid-api.php:703
 #, php-format
 msgid "The transaction for order %s refunded"
 msgstr "A transação do pedido %s foi reembolsada"
 
-#: includes/class-wc-upnid-api.php:691
+#: includes/class-wc-upnid-api.php:704
 msgid "Transaction refunded"
 msgstr "Transação reembolsada"
 
-#: includes/class-wc-upnid-api.php:692
+#: includes/class-wc-upnid-api.php:705
 #, php-format
 msgid ""
 "Order %1$s has been marked as refunded by Upnid, for more details, see %2$s."
@@ -240,11 +243,14 @@ msgstr "API Key da Upnid"
 #, php-format
 msgid ""
 "Please enter your Upnid API Key. This is needed to process the payment and "
-"notifications. Is possible get your API Key in %s."
+"notifications. This API Key must have permissions to create, update and "
+"delete products, payments and webhooks. It is possible get your API Key in "
+"%s."
 msgstr ""
-"Por favor, insira aqui a sua API Key da Upnid. Essa configuração é "
-"necessária para processar os pagamentos do seu e-commerce. Você encontrará "
-"sua API Key em %s."
+"Por favor, informe aqui a sua API Key da Upnid. Isso é necessário para "
+"processar seus pagametos. Sua API Key precisa ter permissão para Criar, "
+"visualizar, alterar e excluir Produtos, Pagamentos e Webhooks. Você pode "
+"criar sua API Key em %s."
 
 #: includes/class-wc-upnid-banking-ticket-gateway.php:141
 #: includes/class-wc-upnid-credit-card-gateway.php:165
@@ -386,44 +392,44 @@ msgstr ""
 "Assim que recebermos a confirmação do seu pagamento, seu pedido será "
 "processado."
 
-#: templates/credit-card/payment-form.php:26
+#: templates/credit-card/payment-form.php:20
 msgid "Card Holder Name"
 msgstr "Nome Impresso"
 
-#: templates/credit-card/payment-form.php:32
+#: templates/credit-card/payment-form.php:26
 msgid "Card Number"
 msgstr "Número do Cartão"
 
-#: templates/credit-card/payment-form.php:41
+#: templates/credit-card/payment-form.php:35
 msgid "Expiry (MM/YY)"
 msgstr "Expiração (MM/AAAA)"
 
-#: templates/credit-card/payment-form.php:44
+#: templates/credit-card/payment-form.php:38
 msgid "MM / YY"
 msgstr "MM / AAAA"
 
-#: templates/credit-card/payment-form.php:48
+#: templates/credit-card/payment-form.php:42
 msgid "Card Code"
 msgstr "Código de Segurança"
 
-#: templates/credit-card/payment-form.php:50
+#: templates/credit-card/payment-form.php:44
 msgid "CVC"
 msgstr "CVV"
 
-#: templates/credit-card/payment-form.php:60
+#: templates/credit-card/payment-form.php:54
 msgid "Please, select the number of installments"
 msgstr "Por favor, selecione o número de parcelas"
 
-#: templates/credit-card/payment-form.php:67
+#: templates/credit-card/payment-form.php:61
 #, php-format
 msgid "(total of %s)"
 msgstr "(do total %s)"
 
-#: templates/credit-card/payment-form.php:67
+#: templates/credit-card/payment-form.php:61
 msgid "(interest-free)"
 msgstr "(sem juros)"
 
-#: templates/credit-card/payment-form.php:70
+#: templates/credit-card/payment-form.php:64
 #, php-format
 msgid "%1$dx of %2$s %3$s"
 msgstr "%1$dx de %2$s %3$s"
@@ -497,8 +503,8 @@ msgstr "Instalar WooCommerce"
 
 #: includes/admin/views/html-notice-person-type-extra-checkout-fields.php:16
 msgid ""
-"depends on a selected person type on Brazilian Market on WooCommerce to "
-"work! We selected Physical and Juridic as default."
+"depends on a selected person type on Brazilian Market on WooCommerce to work!"
+" We selected Physical and Juridic as default."
 msgstr ""
 "precisa de um tipo de pessoa selecionado no Brazilian Market on WooCommerce "
 "para funcionar! Selecionamos Física e Jurídica como padrão."
@@ -520,9 +526,10 @@ msgstr ""
 "imprimir o boleto e pagar em uma agência bancária ou casa lotérica, ou, você "
 "pode copiar o código do boleto e pagar usando o aplicativo do seu banco."
 
-#. Plugin Name of the plugin/theme
-msgid "Upnid for WooCommerce"
-msgstr "Upnid para Woocommerce"
+#. Name of the plugin
+#. Author of the plugin
+msgid "Upnid"
+msgstr "Upnid"
 
 #. Description of the plugin
 msgid "Upnid payment gateway for WooCommerce."
@@ -531,10 +538,6 @@ msgstr "Gateway de pagamento Upnid para Woocommerce."
 #. URI of the plugin
 msgid "https://github.com/upnid/upnid-woocommerce"
 msgstr "https://github.com/upnid/upnid-woocommerce"
-
-#. Author of the plugin
-msgid "Upnid"
-msgstr "Upnid"
 
 #. Author URI of the plugin
 msgid "https://upnid.com"

@@ -199,12 +199,14 @@ class WC_Upnid_API {
 		
 		$validation_errors = array();
 		
+		$sanitized_post = $this->sanitize_array_data( $_POST );
+		
 		$_line_tems = '';
 		$_payment_method = '';
 		$_document_number = '';
 		$_customer_name = '';
 		$_amount = $order->get_total();
-		$_installments = ( ! empty( $_POST['upnid-installments'] ) ) ? $_POST['upnid-installments'] : 1;
+		$_installments = ( ! empty( $sanitized_post['upnid-installments'] ) ) ? intval( $sanitized_post['upnid-installments'] ) : 1;
 		
 		/*
 		* Create lineItems object
@@ -234,10 +236,10 @@ GRAPHQL;
 		 */
 		if ( $order->get_payment_method() === 'upnid-credit-card' ) {
 			
-			if ( ! empty( $_POST['upnid-card-number'] ) &&
-			     ! empty( $_POST['upnid-card-expiry'] ) &&
-			     ! empty( $_POST['upnid-card-cvc'] ) &&
-			     ! empty( $_POST['upnid-card-holder-name'] ) ) {
+			if ( ! empty( $sanitized_post['upnid-card-number'] ) &&
+			     ! empty( $sanitized_post['upnid-card-expiry'] ) &&
+			     ! empty( $sanitized_post['upnid-card-cvc'] ) &&
+			     ! empty( $sanitized_post['upnid-card-holder-name'] ) ) {
 				
 				/*
 				 * Get the total amount including interest.
@@ -248,19 +250,19 @@ GRAPHQL;
 				/*
 				 * Credit card info.
 				 */
-				$card_number = $this->only_numbers( $_POST['upnid-card-number'] );
-				$card_expiry = $this->only_numbers( $_POST['upnid-card-expiry'] );
+				$card_number = $this->only_numbers( $sanitized_post['upnid-card-number'] );
+				$card_expiry = $this->only_numbers( $sanitized_post['upnid-card-expiry'] );
 				$card_expiry_month = substr( $card_expiry, 0, 2 );
 				$card_expiry_year = substr( $card_expiry, 2, 4 );
 				
 				$_payment_method .= <<<GRAPHQL
 				    method: CREDIT_CARD,
 				    card: {
-				      holderName: "{$_POST['upnid-card-holder-name']}"
+				      holderName: "{$sanitized_post['upnid-card-holder-name']}"
 				      number: "{$card_number}"
 				      expirationMonth: "{$card_expiry_month}"
 				      expirationYear: "{$card_expiry_year}"
-				      cvv: "{$_POST['upnid-card-cvc']}"
+				      cvv: "{$sanitized_post['upnid-card-cvc']}"
 				    },
 GRAPHQL;
 			} else {
@@ -295,27 +297,27 @@ GRAPHQL;
 			
 			$wcbcf_settings = get_option( 'wcbcf_settings' );
 			
-			if ( ( '1' === $wcbcf_settings['person_type'] && '1' === $_POST['billing_persontype'] ) || '2' === $wcbcf_settings['person_type'] ) {
-				$_customer_name = $_POST['billing_first_name'] . " " . $_POST['billing_last_name'];
-				$_document_number = $this->only_numbers( $_POST['billing_cpf'] );
+			if ( ( '1' === $wcbcf_settings['person_type'] && '1' === $sanitized_post['billing_persontype'] ) || '2' === $wcbcf_settings['person_type'] ) {
+				$_customer_name = $sanitized_post['billing_first_name'] . " " . $sanitized_post['billing_last_name'];
+				$_document_number = $this->only_numbers( $sanitized_post['billing_cpf'] );
 			}
 			
-			if ( ( '1' === $wcbcf_settings['person_type'] && '2' === $_POST['billing_persontype'] ) || '3' === $wcbcf_settings['person_type'] ) {
-				$_customer_name = $_POST['billing_company'];
-				$_document_number = $this->only_numbers( $_POST['billing_cnpj'] );
+			if ( ( '1' === $wcbcf_settings['person_type'] && '2' === $sanitized_post['billing_persontype'] ) || '3' === $wcbcf_settings['person_type'] ) {
+				$_customer_name = $sanitized_post['billing_company'];
+				$_document_number = $this->only_numbers( $sanitized_post['billing_cnpj'] );
 			}
 			
 		}
 		
-		if ( empty( $_document_number ) && ! empty( $_POST['billing_cpf'] ) ) {
+		if ( empty( $_document_number ) && ! empty( $sanitized_post['billing_cpf'] ) ) {
 			
-			$_customer_name = $_POST['billing_first_name'] . " " . $_POST['billing_last_name'];
-			$_document_number = $this->only_numbers( $_POST['billing_cpf'] );
+			$_customer_name = $sanitized_post['billing_first_name'] . " " . $sanitized_post['billing_last_name'];
+			$_document_number = $this->only_numbers( $sanitized_post['billing_cpf'] );
 			
-		} else if ( empty( $_document_number ) && ! empty( $_POST['billing_cnpj'] ) ) {
+		} else if ( empty( $_document_number ) && ! empty( $sanitized_post['billing_cnpj'] ) ) {
 			
-			$_customer_name = $_POST['billing_company'];
-			$_document_number = $this->only_numbers( $_POST['billing_cnpj'] );
+			$_customer_name = $sanitized_post['billing_company'];
+			$_document_number = $this->only_numbers( $sanitized_post['billing_cnpj'] );
 			
 		} else if ( empty( $_document_number ) ) {
 			$validation_errors[] = array( 'message' => __( 'Missing person type and document data, please review your data and try again or contact us for assistance.', 'upnid-woocommerce' ) );
@@ -346,18 +348,18 @@ GRAPHQL;
 			    amount: {$_amount},
 			    customer: {
 			      name: "{$_customer_name}"
-			      email: "{$_POST['billing_email']}"
-			      phone: "{$_POST['billing_phone']}"
+			      email: "{$sanitized_post['billing_email']}"
+			      phone: "{$sanitized_post['billing_phone']}"
 			      document: "{$_document_number}"
 			    },
 			    shippingAddress: {
-			      line1: "{$_POST['billing_address_1']}",
-			      line2: "{$_POST['billing_number']}"
-			      line3: "{$_POST['billing_address_2']}"
-			      neighborhood: "{$_POST['billing_neighborhood']}"
-			      city: "{$_POST['billing_city']}"
-			      state: "{$_POST['billing_state']}"
-			      postalCode: "{$_POST['billing_postcode']}"
+			      line1: "{$sanitized_post['billing_address_1']}",
+			      line2: "{$sanitized_post['billing_number']}"
+			      line3: "{$sanitized_post['billing_address_2']}"
+			      neighborhood: "{$sanitized_post['billing_neighborhood']}"
+			      city: "{$sanitized_post['billing_city']}"
+			      state: "{$sanitized_post['billing_state']}"
+			      postalCode: "{$sanitized_post['billing_postcode']}"
 			    }
 			    lineItems: [
 			      {$_line_tems}
@@ -394,7 +396,7 @@ GRAPHQL;
 				
 			} catch ( Exception $error ) {
 				
-				wc_add_notice( __( 'Oops... Something went wrong on our side. Could you please try again?', 'upnid-woocommerce' ), 'error' );
+				wc_add_notice( __( 'Oops... Something went wrong. Could you please validated the data that you have inputed and try again?', 'upnid-woocommerce' ), 'error' );
 				
 				if ( 'yes' === $this->gateway->debug ) {
 					$this->gateway->log->add( $this->gateway->id, 'Error when executing GraphQL mutation for order ' . $order_id . '. Error: ' . $error );
@@ -708,5 +710,22 @@ GRAPHQL;
 			default :
 				break;
 		}
+	}
+	
+	/**
+	 * Sanitizes all data from an array.
+	 *
+	 * @param array $array The array to be sanitized.
+	 *
+	 * @return array
+	 */
+	private function sanitize_array_data( $array ) {
+		if ( is_array( $array ) ) {
+			foreach ( $array as $key => $value ) {
+				$array[ $key ] = sanitize_text_field( $value );
+			}
+		}
+		
+		return $array;
 	}
 }
