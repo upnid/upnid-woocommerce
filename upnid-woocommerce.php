@@ -5,7 +5,7 @@
  * Description: Upnid payment gateway for WooCommerce.
  * Author: Upnid
  * Author URI: https://upnid.com
- * Version: 1.0.0
+ * Version: 1.0.1
  * Text Domain: upnid-woocommerce
  * Domain Path: /languages/
  *
@@ -28,7 +28,7 @@ if ( ! class_exists( 'WC_Upnid' ) ) :
 		 *
 		 * @var string
 		 */
-		const VERSION = '1.0.0';
+		const VERSION = '1.0.1';
 		
 		/**
 		 * Instance of this class.

@@ -12,6 +12,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
+<style>
+    .jp-card .jp-card-front, .jp-card .jp-card-back {
+        background-color: <?php echo esc_html($cc_background);?>;
+    }
+</style>
+
 <div class="card-wrapper" style="margin-bottom:15px; margin-top: 15px;"></div>
 
 <form action="" id="upnid">

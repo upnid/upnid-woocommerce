@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: Upnid for WooCommerce 2.0.17\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/upnid-"
 "woocommerce\n"
-"POT-Creation-Date: 2020-06-30 15:05+0000\n"
+"POT-Creation-Date: 2020-07-14 18:43+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,8 +35,8 @@ msgid "Credit Card"
 msgstr ""
 
 #: includes/class-wc-upnid-api.php:167
-#: includes/class-wc-upnid-credit-card-gateway.php:172
-#: templates/credit-card/payment-form.php:50
+#: includes/class-wc-upnid-credit-card-gateway.php:178
+#: templates/credit-card/payment-form.php:56
 msgid "Installments"
 msgstr ""
 
@@ -204,17 +204,17 @@ msgid "Pay with Banking Ticket"
 msgstr ""
 
 #: includes/class-wc-upnid-banking-ticket-gateway.php:134
-#: includes/class-wc-upnid-credit-card-gateway.php:158
+#: includes/class-wc-upnid-credit-card-gateway.php:164
 msgid "Integration Settings"
 msgstr ""
 
 #: includes/class-wc-upnid-banking-ticket-gateway.php:139
-#: includes/class-wc-upnid-credit-card-gateway.php:163
+#: includes/class-wc-upnid-credit-card-gateway.php:169
 msgid "Upnid API Key"
 msgstr ""
 
 #: includes/class-wc-upnid-banking-ticket-gateway.php:141
-#: includes/class-wc-upnid-credit-card-gateway.php:165
+#: includes/class-wc-upnid-credit-card-gateway.php:171
 #, php-format
 msgid ""
 "Please enter your Upnid API Key. This is needed to process the payment and "
@@ -224,33 +224,33 @@ msgid ""
 msgstr ""
 
 #: includes/class-wc-upnid-banking-ticket-gateway.php:141
-#: includes/class-wc-upnid-credit-card-gateway.php:165
+#: includes/class-wc-upnid-credit-card-gateway.php:171
 msgid "Upnid Dashboard > My Account page"
 msgstr ""
 
 #: includes/class-wc-upnid-banking-ticket-gateway.php:148
-#: includes/class-wc-upnid-credit-card-gateway.php:236
+#: includes/class-wc-upnid-credit-card-gateway.php:242
 msgid "Gateway Testing"
 msgstr ""
 
 #: includes/class-wc-upnid-banking-ticket-gateway.php:153
-#: includes/class-wc-upnid-credit-card-gateway.php:241
+#: includes/class-wc-upnid-credit-card-gateway.php:247
 msgid "Debug Log"
 msgstr ""
 
 #: includes/class-wc-upnid-banking-ticket-gateway.php:155
-#: includes/class-wc-upnid-credit-card-gateway.php:243
+#: includes/class-wc-upnid-credit-card-gateway.php:249
 msgid "Enable logging"
 msgstr ""
 
 #: includes/class-wc-upnid-banking-ticket-gateway.php:157
-#: includes/class-wc-upnid-credit-card-gateway.php:245
+#: includes/class-wc-upnid-credit-card-gateway.php:251
 #, php-format
 msgid "Log Upnid events, such as API requests. You can check the log in %s"
 msgstr ""
 
 #: includes/class-wc-upnid-banking-ticket-gateway.php:157
-#: includes/class-wc-upnid-credit-card-gateway.php:245
+#: includes/class-wc-upnid-credit-card-gateway.php:251
 msgid "System Status &gt; Logs"
 msgstr ""
 
@@ -270,43 +270,51 @@ msgstr ""
 msgid "Pay with Credit Card"
 msgstr ""
 
-#: includes/class-wc-upnid-credit-card-gateway.php:177
+#: includes/class-wc-upnid-credit-card-gateway.php:158
+msgid "Credit Card Color"
+msgstr ""
+
+#: includes/class-wc-upnid-credit-card-gateway.php:160
+msgid "Starter background color for the credit card animation."
+msgstr ""
+
+#: includes/class-wc-upnid-credit-card-gateway.php:183
 msgid "Number of Installment"
 msgstr ""
 
-#: includes/class-wc-upnid-credit-card-gateway.php:181
+#: includes/class-wc-upnid-credit-card-gateway.php:187
 msgid "Maximum number of installments possible with payments by credit card."
 msgstr ""
 
-#: includes/class-wc-upnid-credit-card-gateway.php:199
+#: includes/class-wc-upnid-credit-card-gateway.php:205
 msgid "Smallest Installment"
 msgstr ""
 
-#: includes/class-wc-upnid-credit-card-gateway.php:201
+#: includes/class-wc-upnid-credit-card-gateway.php:207
 msgid ""
 "Please enter the value of the smallest installment, Note: it can not be "
 "lower than 1."
 msgstr ""
 
-#: includes/class-wc-upnid-credit-card-gateway.php:206
+#: includes/class-wc-upnid-credit-card-gateway.php:212
 msgid "Interest rate"
 msgstr ""
 
-#: includes/class-wc-upnid-credit-card-gateway.php:208
+#: includes/class-wc-upnid-credit-card-gateway.php:214
 msgid ""
 "Please enter with the interest rate amount. Note: use 0 to not charge "
 "interest."
 msgstr ""
 
-#: includes/class-wc-upnid-credit-card-gateway.php:213
+#: includes/class-wc-upnid-credit-card-gateway.php:219
 msgid "Free Installments"
 msgstr ""
 
-#: includes/class-wc-upnid-credit-card-gateway.php:217
+#: includes/class-wc-upnid-credit-card-gateway.php:223
 msgid "Number of installments with interest free."
 msgstr ""
 
-#: includes/class-wc-upnid-credit-card-gateway.php:220
+#: includes/class-wc-upnid-credit-card-gateway.php:226
 msgctxt "no free installments"
 msgid "None"
 msgstr ""
@@ -348,44 +356,44 @@ msgid ""
 "processed."
 msgstr ""
 
-#: templates/credit-card/payment-form.php:20
+#: templates/credit-card/payment-form.php:26
 msgid "Card Holder Name"
 msgstr ""
 
-#: templates/credit-card/payment-form.php:26
+#: templates/credit-card/payment-form.php:32
 msgid "Card Number"
 msgstr ""
 
-#: templates/credit-card/payment-form.php:35
+#: templates/credit-card/payment-form.php:41
 msgid "Expiry (MM/YY)"
 msgstr ""
 
-#: templates/credit-card/payment-form.php:38
+#: templates/credit-card/payment-form.php:44
 msgid "MM / YY"
 msgstr ""
 
-#: templates/credit-card/payment-form.php:42
+#: templates/credit-card/payment-form.php:48
 msgid "Card Code"
 msgstr ""
 
-#: templates/credit-card/payment-form.php:44
+#: templates/credit-card/payment-form.php:50
 msgid "CVC"
 msgstr ""
 
-#: templates/credit-card/payment-form.php:54
+#: templates/credit-card/payment-form.php:60
 msgid "Please, select the number of installments"
 msgstr ""
 
-#: templates/credit-card/payment-form.php:61
+#: templates/credit-card/payment-form.php:67
 #, php-format
 msgid "(total of %s)"
 msgstr ""
 
-#: templates/credit-card/payment-form.php:61
+#: templates/credit-card/payment-form.php:67
 msgid "(interest-free)"
 msgstr ""
 
-#: templates/credit-card/payment-form.php:64
+#: templates/credit-card/payment-form.php:70
 #, php-format
 msgid "%1$dx of %2$s %3$s"
 msgstr ""

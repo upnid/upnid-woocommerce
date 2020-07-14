@@ -154,6 +154,12 @@ class WC_Upnid_Credit_Card_Gateway extends WC_Payment_Gateway {
 				'desc_tip'    => true,
 				'default'     => __( 'Pay with Credit Card', 'upnid-woocommerce' ),
 			),
+			'cc_background'        => array(
+				'title'       => __( 'Credit Card Color', 'upnid-woocommerce' ),
+				'type'        => 'color',
+				'description' => __( 'Starter background color for the credit card animation.', 'upnid-woocommerce' ),
+				'default'     => '#226DE6'
+			),
 			'integration'          => array(
 				'title'       => __( 'Integration Settings', 'upnid-woocommerce' ),
 				'type'        => 'title',
@@ -296,6 +302,7 @@ class WC_Upnid_Credit_Card_Gateway extends WC_Payment_Gateway {
 				'max_installment'      => $this->max_installment,
 				'smallest_installment' => $this->api->get_smallest_installment(),
 				'installments'         => $installments,
+				'cc_background'        => $this->get_option( 'cc_background', '#226DE6' )
 			),
 			'woocommerce/upnid/',
 			WC_Upnid::get_templates_path()
