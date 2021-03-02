@@ -106,6 +106,14 @@ Entre em contato [clicando aqui](http://wordpress.org/support/plugin/upnid-wooco
 
 == Changelog ==
 
+= 1.0.2 =
+
+* Adicionados novos botões na tela de confirmação de compra via boleto.
+
+= 1.0.1 =
+
+* Pequenas correções.
+
 = 1.0.0 =
 
 * Versão inicial do plugin.
