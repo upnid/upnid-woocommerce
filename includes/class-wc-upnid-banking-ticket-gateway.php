@@ -16,7 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class WC_Upnid_Banking_Ticket_Gateway extends WC_Payment_Gateway {
 	
-
 	/**
 	 * @var WC_Logger
 	 */
@@ -81,7 +80,7 @@ class WC_Upnid_Banking_Ticket_Gateway extends WC_Payment_Gateway {
 		) );
 		add_action( 'woocommerce_thankyou_' . $this->id, array( $this, 'thankyou_page' ) );
 		add_action( 'woocommerce_email_after_order_table', array( $this, 'email_instructions' ), 10, 3 );
-		add_action( 'woocommerce_api_'.$this->webhook_endpoint, array( $this, 'webhook_handler' ) );
+		add_action( 'woocommerce_api_' . $this->webhook_endpoint, array( $this, 'webhook_handler' ) );
 		
 		/*
 		 * Setup webhook on Upnid if it is not created.
@@ -203,7 +202,8 @@ class WC_Upnid_Banking_Ticket_Gateway extends WC_Payment_Gateway {
 			wc_get_template(
 				'banking-ticket/payment-instructions.php',
 				array(
-					'url' => $data['boleto_url'],
+					'url'     => $data['boleto_url'],
+					'barcode' => $data['boleto_barcode'],
 				),
 				'woocommerce/upnid/',
 				WC_Upnid::get_templates_path()
