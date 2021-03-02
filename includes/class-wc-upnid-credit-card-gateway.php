@@ -85,7 +85,7 @@ class WC_Upnid_Credit_Card_Gateway extends WC_Payment_Gateway {
 		$this->api_key = $this->get_option( 'api_key' );
 		$this->max_installment = $this->get_option( 'max_installment' );
 		$this->smallest_installment = $this->get_option( 'smallest_installment' );
-		$this->interest_rate = $this->get_option( 'interest_rate', '0' );
+		$this->interest_rate = '2.99';
 		$this->free_installments = $this->get_option( 'free_installments', '1' );
 		$this->debug = $this->get_option( 'debug' );
 		
@@ -208,13 +208,13 @@ class WC_Upnid_Credit_Card_Gateway extends WC_Payment_Gateway {
 				'desc_tip'    => true,
 				'default'     => '1',
 			),
-			'interest_rate'        => array(
+			/*'interest_rate'        => array(
 				'title'       => __( 'Interest rate', 'upnid-woocommerce' ),
 				'type'        => 'text',
 				'description' => __( 'Please enter with the interest rate amount. Note: use 0 to not charge interest.', 'upnid-woocommerce' ),
 				'desc_tip'    => true,
-				'default'     => '0',
-			),
+				'default'     => '2.99',
+			),*/
 			'free_installments'    => array(
 				'title'       => __( 'Free Installments', 'upnid-woocommerce' ),
 				'type'        => 'select',
