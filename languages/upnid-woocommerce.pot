@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: Upnid for WooCommerce 2.0.17\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/upnid-"
 "woocommerce\n"
-"POT-Creation-Date: 2020-07-14 18:43+0000\n"
+"POT-Creation-Date: 2021-03-02 15:45+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,195 +25,195 @@ msgstr ""
 msgid "Credit Card Settings"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:165
+#: includes/class-wc-upnid-api.php:166
 msgid "Banking Ticket URL"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:166
+#: includes/class-wc-upnid-api.php:167
 #: includes/class-wc-upnid-credit-card-gateway.php:148
 msgid "Credit Card"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:167
+#: includes/class-wc-upnid-api.php:168
 #: includes/class-wc-upnid-credit-card-gateway.php:178
 #: templates/credit-card/payment-form.php:56
 msgid "Installments"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:168
+#: includes/class-wc-upnid-api.php:169
 msgid "Total paid"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:269
+#: includes/class-wc-upnid-api.php:270
 msgid ""
 "Missing credit card data, please review your data and try again or contact "
 "us for assistance."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:323
+#: includes/class-wc-upnid-api.php:324
 msgid ""
 "Missing person type and document data, please review your data and try again "
 "or contact us for assistance."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:399
+#: includes/class-wc-upnid-api.php:400
 msgid ""
 "Oops... Something went wrong. Could you please validated the data that you "
 "have inputed and try again?"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:449
+#: includes/class-wc-upnid-api.php:450
 msgid ""
 "Oops... Looks like we could not proceed with your payment. Could you check "
 "your infos and try again?"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:530
+#: includes/class-wc-upnid-api.php:531
 msgid "Upnid Request Failure"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:643
+#: includes/class-wc-upnid-api.php:644
 msgid "Upnid: The transaction was authorized."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:648
+#: includes/class-wc-upnid-api.php:649
 msgid ""
 "Upnid: A refund was requested for this transaction. Waiting for refund "
 "confirmation."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:652
+#: includes/class-wc-upnid-api.php:653
 msgid "Upnid: The transaction is being processed."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:657
+#: includes/class-wc-upnid-api.php:658
 msgid "Upnid: Transaction paid."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:665
+#: includes/class-wc-upnid-api.php:666
 msgid "Upnid: The banking ticket was issued but not paid yet."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:669
+#: includes/class-wc-upnid-api.php:670
 msgid "Upnid: The transaction was rejected by the card company or by fraud."
 msgstr ""
 
 #. %s transaction details url
-#: includes/class-wc-upnid-api.php:676
+#: includes/class-wc-upnid-api.php:677
 #, php-format
 msgid ""
 "The transaction for order %s was rejected by the card company or by fraud"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:677
+#: includes/class-wc-upnid-api.php:678
 msgid "Transaction failed"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:678
+#: includes/class-wc-upnid-api.php:679
 #, php-format
 msgid ""
 "Order %1$s has been marked as failed, because the transaction was rejected "
 "by the card company or by fraud, for more details, see %2$s."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:683
+#: includes/class-wc-upnid-api.php:684
 msgid ""
 "Upnid: The transaction was disputed by the credit card company or by the "
 "customer."
 msgstr ""
 
 #. %s transaction details url
-#: includes/class-wc-upnid-api.php:690
+#: includes/class-wc-upnid-api.php:691
 #, php-format
 msgid "The transaction for order %s was disputed"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:691
+#: includes/class-wc-upnid-api.php:692
 msgid "Transaction disputed"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:692
+#: includes/class-wc-upnid-api.php:693
 #, php-format
 msgid ""
 "Order %1$s has been marked as disputed, because the transaction was disputed "
 "by the credit card company or by the customer, for more details, see %2$s."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:697
+#: includes/class-wc-upnid-api.php:698
 msgid "Upnid: The transaction was refunded."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:703
+#: includes/class-wc-upnid-api.php:704
 #, php-format
 msgid "The transaction for order %s refunded"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:704
+#: includes/class-wc-upnid-api.php:705
 msgid "Transaction refunded"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:705
+#: includes/class-wc-upnid-api.php:706
 #, php-format
 msgid ""
 "Order %1$s has been marked as refunded by Upnid, for more details, see %2$s."
 msgstr ""
 
-#: includes/class-wc-upnid-banking-ticket-gateway.php:52
+#: includes/class-wc-upnid-banking-ticket-gateway.php:51
 msgid "Upnid - Banking Ticket"
 msgstr ""
 
-#: includes/class-wc-upnid-banking-ticket-gateway.php:53
+#: includes/class-wc-upnid-banking-ticket-gateway.php:52
 msgid "Accept banking ticket payments using Upnid."
 msgstr ""
 
-#: includes/class-wc-upnid-banking-ticket-gateway.php:114
+#: includes/class-wc-upnid-banking-ticket-gateway.php:113
 #: includes/class-wc-upnid-credit-card-gateway.php:138
 msgid "Enable/Disable"
 msgstr ""
 
-#: includes/class-wc-upnid-banking-ticket-gateway.php:116
+#: includes/class-wc-upnid-banking-ticket-gateway.php:115
 msgid "Enable Upnid Banking Ticket"
 msgstr ""
 
-#: includes/class-wc-upnid-banking-ticket-gateway.php:120
+#: includes/class-wc-upnid-banking-ticket-gateway.php:119
 #: includes/class-wc-upnid-credit-card-gateway.php:144
 msgid "Title"
 msgstr ""
 
-#: includes/class-wc-upnid-banking-ticket-gateway.php:122
+#: includes/class-wc-upnid-banking-ticket-gateway.php:121
 #: includes/class-wc-upnid-credit-card-gateway.php:146
 msgid "This controls the title which the user sees during checkout."
 msgstr ""
 
-#: includes/class-wc-upnid-banking-ticket-gateway.php:124
+#: includes/class-wc-upnid-banking-ticket-gateway.php:123
 msgid "Banking Ticket"
 msgstr ""
 
-#: includes/class-wc-upnid-banking-ticket-gateway.php:127
+#: includes/class-wc-upnid-banking-ticket-gateway.php:126
 #: includes/class-wc-upnid-credit-card-gateway.php:151
 msgid "Description"
 msgstr ""
 
-#: includes/class-wc-upnid-banking-ticket-gateway.php:129
+#: includes/class-wc-upnid-banking-ticket-gateway.php:128
 #: includes/class-wc-upnid-credit-card-gateway.php:153
 msgid "This controls the description which the user sees during checkout."
 msgstr ""
 
-#: includes/class-wc-upnid-banking-ticket-gateway.php:131
+#: includes/class-wc-upnid-banking-ticket-gateway.php:130
 msgid "Pay with Banking Ticket"
 msgstr ""
 
-#: includes/class-wc-upnid-banking-ticket-gateway.php:134
+#: includes/class-wc-upnid-banking-ticket-gateway.php:133
 #: includes/class-wc-upnid-credit-card-gateway.php:164
 msgid "Integration Settings"
 msgstr ""
 
-#: includes/class-wc-upnid-banking-ticket-gateway.php:139
+#: includes/class-wc-upnid-banking-ticket-gateway.php:138
 #: includes/class-wc-upnid-credit-card-gateway.php:169
 msgid "Upnid API Key"
 msgstr ""
 
-#: includes/class-wc-upnid-banking-ticket-gateway.php:141
+#: includes/class-wc-upnid-banking-ticket-gateway.php:140
 #: includes/class-wc-upnid-credit-card-gateway.php:171
 #, php-format
 msgid ""
@@ -223,33 +223,33 @@ msgid ""
 "%s."
 msgstr ""
 
-#: includes/class-wc-upnid-banking-ticket-gateway.php:141
+#: includes/class-wc-upnid-banking-ticket-gateway.php:140
 #: includes/class-wc-upnid-credit-card-gateway.php:171
 msgid "Upnid Dashboard > My Account page"
 msgstr ""
 
-#: includes/class-wc-upnid-banking-ticket-gateway.php:148
+#: includes/class-wc-upnid-banking-ticket-gateway.php:147
 #: includes/class-wc-upnid-credit-card-gateway.php:242
 msgid "Gateway Testing"
 msgstr ""
 
-#: includes/class-wc-upnid-banking-ticket-gateway.php:153
+#: includes/class-wc-upnid-banking-ticket-gateway.php:152
 #: includes/class-wc-upnid-credit-card-gateway.php:247
 msgid "Debug Log"
 msgstr ""
 
-#: includes/class-wc-upnid-banking-ticket-gateway.php:155
+#: includes/class-wc-upnid-banking-ticket-gateway.php:154
 #: includes/class-wc-upnid-credit-card-gateway.php:249
 msgid "Enable logging"
 msgstr ""
 
-#: includes/class-wc-upnid-banking-ticket-gateway.php:157
+#: includes/class-wc-upnid-banking-ticket-gateway.php:156
 #: includes/class-wc-upnid-credit-card-gateway.php:251
 #, php-format
 msgid "Log Upnid events, such as API requests. You can check the log in %s"
 msgstr ""
 
-#: includes/class-wc-upnid-banking-ticket-gateway.php:157
+#: includes/class-wc-upnid-banking-ticket-gateway.php:156
 #: includes/class-wc-upnid-credit-card-gateway.php:251
 msgid "System Status &gt; Logs"
 msgstr ""
@@ -296,16 +296,6 @@ msgid ""
 "lower than 1."
 msgstr ""
 
-#: includes/class-wc-upnid-credit-card-gateway.php:212
-msgid "Interest rate"
-msgstr ""
-
-#: includes/class-wc-upnid-credit-card-gateway.php:214
-msgid ""
-"Please enter with the interest rate amount. Note: use 0 to not charge "
-"interest."
-msgstr ""
-
 #: includes/class-wc-upnid-credit-card-gateway.php:219
 msgid "Free Installments"
 msgstr ""
@@ -334,26 +324,38 @@ msgstr ""
 msgid "Note: The order will be confirmed only after the payment approval."
 msgstr ""
 
-#: templates/banking-ticket/payment-instructions.php:16
+#: templates/banking-ticket/payment-instructions.php:21
 #: templates/banking-ticket/emails/html-instructions.php:21
 msgid "Pay the banking ticket"
 msgstr ""
 
-#: templates/banking-ticket/payment-instructions.php:16
-msgid "Please click in the following button to view your banking ticket."
+#: templates/banking-ticket/payment-instructions.php:23
+msgid "Billet from your purchase at"
 msgstr ""
 
-#: templates/banking-ticket/payment-instructions.php:16
-msgid ""
-"You can print and pay in your internet banking or in a lottery retailer."
+#: templates/banking-ticket/payment-instructions.php:28
+msgid "Send via WhatsApp"
 msgstr ""
 
-#: templates/banking-ticket/payment-instructions.php:16
-#: templates/banking-ticket/emails/html-instructions.php:24
-#: templates/banking-ticket/emails/plain-instructions.php:26
+#: templates/banking-ticket/payment-instructions.php:33
+msgid "Instructions"
+msgstr ""
+
+#: templates/banking-ticket/payment-instructions.php:34
 msgid ""
-"After we receive the banking ticket payment confirmation, your order will be "
-"processed."
+"1. You can print and pay in your internet banking or in a lottery retailer."
+msgstr ""
+
+#: templates/banking-ticket/payment-instructions.php:35
+msgid "2. You can also pay via the internet using the barcode:"
+msgstr ""
+
+#: templates/banking-ticket/payment-instructions.php:42
+msgid "Copied!"
+msgstr ""
+
+#: templates/banking-ticket/payment-instructions.php:49
+msgid "Copy"
 msgstr ""
 
 #: templates/credit-card/payment-form.php:26
@@ -478,6 +480,13 @@ msgstr ""
 msgid ""
 "Please use the link below to view your banking ticket, you can print and pay "
 "in your internet banking or in a lottery retailer:"
+msgstr ""
+
+#: templates/banking-ticket/emails/html-instructions.php:24
+#: templates/banking-ticket/emails/plain-instructions.php:26
+msgid ""
+"After we receive the banking ticket payment confirmation, your order will be "
+"processed."
 msgstr ""
 
 #. Name of the plugin
