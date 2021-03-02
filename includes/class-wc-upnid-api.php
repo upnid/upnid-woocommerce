@@ -157,6 +157,7 @@ class WC_Upnid_API {
 				'installments'   => $data->createPayment->installments,
 				'card_brand'     => ( isset( $data->createPayment->card->brand ) ) ? $data->createPayment->card->brand : '',
 				'boleto_url'     => ( isset( $data->createPayment->boleto->url ) ) ? $data->createPayment->boleto->url : '',
+				'boleto_barcode' => ( isset( $data->createPayment->boleto->number ) ) ? $data->createPayment->boleto->number : '',
 			)
 		);
 		
