@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: Upnid for WooCommerce 2.0.17\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/upnid-"
 "woocommerce\n"
-"POT-Creation-Date: 2021-03-02 15:45+0000\n"
+"POT-Creation-Date: 2021-03-09 23:17+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,115 +44,121 @@ msgstr ""
 msgid "Total paid"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:270
+#: includes/class-wc-upnid-api.php:271
 msgid ""
 "Missing credit card data, please review your data and try again or contact "
 "us for assistance."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:324
+#: includes/class-wc-upnid-api.php:325
 msgid ""
 "Missing person type and document data, please review your data and try again "
 "or contact us for assistance."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:400
+#: includes/class-wc-upnid-api.php:333
+msgid ""
+"At least one phone number is required, please review your data and try again "
+"or contact us for assistance."
+msgstr ""
+
+#: includes/class-wc-upnid-api.php:409
 msgid ""
 "Oops... Something went wrong. Could you please validated the data that you "
 "have inputed and try again?"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:450
+#: includes/class-wc-upnid-api.php:459
 msgid ""
 "Oops... Looks like we could not proceed with your payment. Could you check "
 "your infos and try again?"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:531
+#: includes/class-wc-upnid-api.php:540
 msgid "Upnid Request Failure"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:644
+#: includes/class-wc-upnid-api.php:653
 msgid "Upnid: The transaction was authorized."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:649
+#: includes/class-wc-upnid-api.php:658
 msgid ""
 "Upnid: A refund was requested for this transaction. Waiting for refund "
 "confirmation."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:653
+#: includes/class-wc-upnid-api.php:662
 msgid "Upnid: The transaction is being processed."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:658
+#: includes/class-wc-upnid-api.php:667
 msgid "Upnid: Transaction paid."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:666
+#: includes/class-wc-upnid-api.php:675
 msgid "Upnid: The banking ticket was issued but not paid yet."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:670
+#: includes/class-wc-upnid-api.php:679
 msgid "Upnid: The transaction was rejected by the card company or by fraud."
 msgstr ""
 
 #. %s transaction details url
-#: includes/class-wc-upnid-api.php:677
+#: includes/class-wc-upnid-api.php:686
 #, php-format
 msgid ""
 "The transaction for order %s was rejected by the card company or by fraud"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:678
+#: includes/class-wc-upnid-api.php:687
 msgid "Transaction failed"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:679
+#: includes/class-wc-upnid-api.php:688
 #, php-format
 msgid ""
 "Order %1$s has been marked as failed, because the transaction was rejected "
 "by the card company or by fraud, for more details, see %2$s."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:684
+#: includes/class-wc-upnid-api.php:693
 msgid ""
 "Upnid: The transaction was disputed by the credit card company or by the "
 "customer."
 msgstr ""
 
 #. %s transaction details url
-#: includes/class-wc-upnid-api.php:691
+#: includes/class-wc-upnid-api.php:700
 #, php-format
 msgid "The transaction for order %s was disputed"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:692
+#: includes/class-wc-upnid-api.php:701
 msgid "Transaction disputed"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:693
+#: includes/class-wc-upnid-api.php:702
 #, php-format
 msgid ""
 "Order %1$s has been marked as disputed, because the transaction was disputed "
 "by the credit card company or by the customer, for more details, see %2$s."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:698
+#: includes/class-wc-upnid-api.php:707
 msgid "Upnid: The transaction was refunded."
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:704
+#: includes/class-wc-upnid-api.php:713
 #, php-format
 msgid "The transaction for order %s refunded"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:705
+#: includes/class-wc-upnid-api.php:714
 msgid "Transaction refunded"
 msgstr ""
 
-#: includes/class-wc-upnid-api.php:706
+#: includes/class-wc-upnid-api.php:715
 #, php-format
 msgid ""
 "Order %1$s has been marked as refunded by Upnid, for more details, see %2$s."
