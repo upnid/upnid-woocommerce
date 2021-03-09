@@ -206,6 +206,7 @@ class WC_Upnid_API {
 		$_payment_method = '';
 		$_document_number = '';
 		$_customer_name = '';
+		$_phone = '';
 		$_amount = $order->get_total();
 		$_installments = ( ! empty( $sanitized_post['upnid-installments'] ) ) ? intval( $sanitized_post['upnid-installments'] ) : 1;
 		
@@ -324,6 +325,14 @@ GRAPHQL;
 			$validation_errors[] = array( 'message' => __( 'Missing person type and document data, please review your data and try again or contact us for assistance.', 'upnid-woocommerce' ) );
 		}
 		
+		if ( ! empty( $sanitized_post['billing_phone'] ) ) {
+			$_phone = $sanitized_post['billing_phone'];
+		} else if ( ! empty( $sanitized_post['billing_cellphone'] ) ) {
+			$_phone = $sanitized_post['billing_cellphone'];
+		} else {
+			$validation_errors[] = array( 'message' => __( 'At least one phone number is required, please review your data and try again or contact us for assistance.', 'upnid-woocommerce' ) );
+		}
+		
 		/*
 		 * Check if we do not have any transaction errors.
 		 */
@@ -350,7 +359,7 @@ GRAPHQL;
 			    customer: {
 			      name: "{$_customer_name}"
 			      email: "{$sanitized_post['billing_email']}"
-			      phone: "{$sanitized_post['billing_phone']}"
+			      phone: "{$_phone}"
 			      document: "{$_document_number}"
 			    },
 			    shippingAddress: {
