@@ -106,6 +106,10 @@ Entre em contato [clicando aqui](http://wordpress.org/support/plugin/upnid-wooco
 
 == Changelog ==
 
+= 1.0.3 =
+
+* Adicionada checagem de campos de telefone.
+
 = 1.0.2 =
 
 * Adicionados novos botões na tela de confirmação de compra via boleto.
