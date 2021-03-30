@@ -1,0 +1,44 @@
+{
+    "name": "gmostafa/php-graphql-client",
+    "description": "GraphQL client and query builder.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "graphql",
+        "graph-ql",
+        "client",
+        "php",
+        "query-builder",
+        "query",
+        "builder"
+    ],
+    "authors": [
+        {
+            "name": "Mostafa Ghoneimy",
+            "email": "emostafagh@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "GraphQL\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GraphQL\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.1",
+        "ext-json": "*",
+        "ext-readline": "*",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5|^8.0",
+        "codacy/coverage": "^1.4"
+    },
+    "suggest": {
+        "gmostafa/php-graphql-oqm": "To have object-to-query mapping support"
+    }
+}
