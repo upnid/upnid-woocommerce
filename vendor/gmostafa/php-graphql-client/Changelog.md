@@ -8,6 +8,80 @@ between each release.
 - Refactor the query conversion to string to separate the process of
 constructing a new query and adding a nested subfield
 
+## Unreleased
+
+## 1.10
+
+### Added
+
+- Added support for MutationBuilder
+
+### Removed
+
+- Removed EmptySelectionSetException being thrown from QueryBuilder if selection set is empty
+
+## 1.9.2:
+
+### Removed
+
+- Removed support for GET requests by throwing exception when request type is set to GET
+
+## 1.9.1:
+
+### Changed
+
+- Modified variable identification logic in string literals
+
+## 1.9:
+
+### Added
+
+- Added PHP8 support
+
+## 1.8:
+
+### Changed
+
+- Updated Query class to allow for an alias
+- Updated QueryBuilder class to allow for an alias
+
+## 1.7:
+
+### Added
+
+- Added ability to set request http method type in client
+- Added Guzzle7 to composer.json
+- Added PHP7.4 to travis test environments
+
+## 1.6.1:
+
+### Changed:
+
+- Removed empty braces added in the selection set when no fields are selected
+
+## 1.6:
+
+### Added:
+
+- Added ability to inject and use PSR-18 compatible HTTP client in sending requests to GraphQL server
+
+## 1.5:
+
+### Added
+
+- Ability to create multiple queries in one object using Query class
+- Ability to create multiple queries in one object using QueryBuilder class
+
+## 1.4:
+
+### Added
+
+- Support for passing guzzle httpOptions that overrides the authorizationHeaders
+
+### Changed
+
+- Replaced all new line characters "\n" with PHP_EOL
+
 ## 1.3: 2019-08-03
 
 ### Added

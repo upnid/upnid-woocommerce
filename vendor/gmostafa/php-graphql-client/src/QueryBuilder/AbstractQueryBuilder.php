@@ -2,7 +2,6 @@
 
 namespace GraphQL\QueryBuilder;
 
-use GraphQL\Exception\EmptySelectionSetException;
 use GraphQL\InlineFragment;
 use GraphQL\Query;
 use GraphQL\RawObject;
@@ -18,7 +17,7 @@ abstract class AbstractQueryBuilder implements QueryBuilderInterface
     /**
      * @var Query
      */
-    private $query;
+    protected $query;
 
     /**
      * @var array|Variable[]
@@ -39,13 +38,26 @@ abstract class AbstractQueryBuilder implements QueryBuilderInterface
      * QueryBuilder constructor.
      *
      * @param string $queryObject
+     * @param string $alias
      */
-    public function __construct(string $queryObject)
+    public function __construct(string $queryObject = '', string $alias = '')
     {
-        $this->query         = new Query($queryObject);
+        $this->query         = new Query($queryObject, $alias);
         $this->variables     = [];
         $this->selectionSet  = [];
         $this->argumentsList = [];
+    }
+
+    /**
+     * @param string $alias
+     *
+     * @return $this
+     */
+    public function setAlias(string $alias)
+    {
+        $this->query->setAlias($alias);
+
+        return $this;
     }
 
     /**
@@ -53,13 +65,9 @@ abstract class AbstractQueryBuilder implements QueryBuilderInterface
      */
     public function getQuery(): Query
     {
-        if (empty($this->selectionSet)) {
-            throw new EmptySelectionSetException(static::class);
-        }
-
         // Convert nested query builders to query objects
         foreach ($this->selectionSet as $key => $field) {
-            if ($field instanceof AbstractQueryBuilder) {
+            if ($field instanceof QueryBuilderInterface) {
                 $this->selectionSet[$key] = $field->getQuery();
             }
         }
@@ -72,7 +80,7 @@ abstract class AbstractQueryBuilder implements QueryBuilderInterface
     }
 
     /**
-     * @param string|QueryBuilder|Query $selectedField
+     * @param string|QueryBuilderInterface|InlineFragment|Query $selectedField
      *
      * @return $this
      */
@@ -80,7 +88,7 @@ abstract class AbstractQueryBuilder implements QueryBuilderInterface
     {
         if (
             is_string($selectedField)
-            || $selectedField instanceof AbstractQueryBuilder
+            || $selectedField instanceof QueryBuilderInterface
             || $selectedField instanceof Query
             || $selectedField instanceof InlineFragment
         ) {

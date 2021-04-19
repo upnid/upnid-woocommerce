@@ -18,6 +18,10 @@ class Query extends NestableObject
     /**
      * Stores the GraphQL query format
      *
+     * First string is object name
+     * Second string is arguments
+     * Third string is selection set
+     *
      * @var string
      */
     protected const QUERY_FORMAT = "%s%s%s";
@@ -44,6 +48,13 @@ class Query extends NestableObject
     protected $fieldName;
 
     /**
+     * Stores the object alias
+     *
+     * @var string
+     */
+    protected $alias;
+
+    /**
      * Stores the list of variables to be used in the query
      *
      * @var array|Variable[]
@@ -67,16 +78,30 @@ class Query extends NestableObject
     /**
      * GQLQueryBuilder constructor.
      *
-     * @param string $fieldName
+     * @param string $fieldName if no value is provided for the field name an empty query object is assumed
+     * @param string $alias the alias to use for the query if required
      */
-    public function __construct(string $fieldName)
+    public function __construct(string $fieldName = '', string $alias = '')
     {
         $this->fieldName     = $fieldName;
+        $this->alias         = $alias;
         $this->operationName = '';
         $this->variables     = [];
         $this->arguments     = [];
         $this->selectionSet  = [];
         $this->isNested      = false;
+    }
+
+    /**
+     * @param string $alias
+     *
+     * @return Query
+     */
+    public function setAlias(string $alias)
+    {
+        $this->alias = $alias;
+
+        return $this;
     }
 
     /**
@@ -210,13 +235,28 @@ class Query extends NestableObject
     public function __toString()
     {
         $queryFormat = static::QUERY_FORMAT;
-        if (!$this->isNested && $this->fieldName !== static::OPERATION_TYPE) {
-            $queryFormat = $this->generateSignature() . " {" . PHP_EOL . static::QUERY_FORMAT . PHP_EOL . "}";
-        }
-        $argumentsString    = $this->constructArguments();
         $selectionSetString = $this->constructSelectionSet();
 
-        return sprintf($queryFormat, $this->fieldName, $argumentsString, $selectionSetString);
+        if (!$this->isNested) {
+            $queryFormat = $this->generateSignature();
+            if ($this->fieldName === '') {
+
+                return $queryFormat . $selectionSetString;
+            } else {
+                $queryFormat = $this->generateSignature() . " {" . PHP_EOL . static::QUERY_FORMAT . PHP_EOL . "}";
+            }
+        }
+        $argumentsString = $this->constructArguments();
+
+        return sprintf($queryFormat, $this->generateFieldName(), $argumentsString, $selectionSetString);
+    }
+
+    /**
+     * @return string
+     */
+    protected function generateFieldName(): string
+    {
+        return empty($this->alias) ? $this->fieldName : sprintf('%s: %s', $this->alias, $this->fieldName);
     }
 
     /**

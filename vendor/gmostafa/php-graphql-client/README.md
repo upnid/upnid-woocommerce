@@ -47,7 +47,7 @@ https://github.com/mghoneimy/php-graphql-oqm)
 
 ## Simple Query
 
-```
+```php
 $gql = (new Query('companies'))
     ->setSelectionSet(
         [
@@ -60,8 +60,68 @@ $gql = (new Query('companies'))
 This simple query will retrieve all companies displaying their names and serial
 numbers.
 
-## Nested Queries
+### The Full Form
+
+The query provided in the previous example is represented in the
+"shorthand form". The shorthand form involves writing a reduced number of code
+lines which speeds up the process of wriing querries. Below is an example of
+the full form for the exact same query written in the previous example.
+
+```php
+$gql = (new Query())
+    ->setSelectionSet(
+        [
+            (new Query('companies'))
+                ->setSelectionSet(
+                    [
+                        'name',
+                        'serialNumber'
+                    ]
+                )
+        ]
+    );
 ```
+
+As seen in the example, the shorthand form is simpler to read and write, it's
+generally preferred to use compared to the full form.
+
+The full form shouldn't be used unless the query can't be represented in the
+shorthand form, which has only one case, when we want to run multiple queries
+in the same object.
+
+
+## Multiple Queries
+```php
+$gql = (new Query())
+    ->setSelectionSet(
+        [
+            (new Query('companies'))
+            ->setSelectionSet(
+                [
+                    'name',
+                    'serialNumber'
+                ]
+            ),
+            (new Query('countries'))
+            ->setSelectionSet(
+                [
+                    'name',
+                    'code',
+                ]
+            )
+        ]
+    );
+```
+
+This query retrieves all companies and countries displaying some data fields
+for each. It basically runs two (or more if needed) independent queries in
+one query object envelop.
+
+Writing multiple queries requires writing the query object in the full form
+to represent each query as a subfield under the parent query object.
+
+## Nested Queries
+```php
 $gql = (new Query('companies'))
     ->setSelectionSet(
         [
@@ -87,7 +147,7 @@ displaying their dates.
 
 ## Query With Arguments
 
-```
+```php
 $gql = (new Query('companies'))
     ->setArguments(['name' => 'Tech Co.', 'first' => 3])
     ->setSelectionSet(
@@ -104,7 +164,7 @@ and serial numbers.
 
 ## Query With Array Argument
 
-```
+```php
 $gql = (new Query('companies'))
     ->setArguments(['serialNumbers' => [159, 260, 371]])
     ->setSelectionSet(
@@ -121,7 +181,7 @@ displaying the name and serial number.
 
 ## Query With Input Object Argument
 
-```
+```php
 $gql = (new Query('companies'))
     ->setArguments(['filter' => new RawObject('{name_starts_with: "Face"}')])
     ->setSelectionSet(
@@ -145,7 +205,7 @@ query class.
 
 ## Query With Variables
 
-```
+```php
 $gql = (new Query('companies'))
     ->setVariables(
         [
@@ -178,6 +238,46 @@ false by default
 variable. The default value will only be considered
 if the isRequired argument is set to false.
 
+## Using an alias
+```php
+$gql = (new Query())
+    ->setSelectionSet(
+        [
+            (new Query('companies', 'TechCo'))
+                ->setArguments(['name' => 'Tech Co.'])
+                ->setSelectionSet(
+                    [
+                        'name',
+                        'serialNumber'
+                    ]
+                ),
+            (new Query('companies', 'AnotherTechCo'))
+                ->setArguments(['name' => 'A.N. Other Tech Co.'])
+                ->setSelectionSet(
+                    [
+                        'name',
+                        'serialNumber'
+                    ]
+                )
+        ]
+    );
+```
+
+An alias can be set in the second argument of the Query constructor for occasions when the same object needs to be retrieved multiple times with different arguments.
+
+```php
+$gql = (new Query('companies'))
+    ->setAlias('CompanyAlias')
+    ->setSelectionSet(
+        [
+            'name',
+            'serialNumber'
+        ]
+    );
+```
+
+The alias can also be set via the setter method.
+
 ## Using Interfaces: Query With Inline Fragments
 
 When querying a field that returns an interface type, you might need to use
@@ -185,7 +285,7 @@ inline fragments to access data on the underlying concrete type.
 
 This example show how to generate inline fragments using this package:
 
-```
+```php
 $gql = new Query('companies');
 $gql->setSelectionSet(
     [
@@ -211,7 +311,7 @@ Query building is divided into steps.
 That's how the "Query With Input Object Argument" example can be created using
 the QueryBuilder:
 
-```
+```php
 $builder = (new QueryBuilder('companies'))
     ->setVariable('namePrefix', 'String', true)
     ->setArgument('filter', new RawObject('{name_starts_with: $namePrefix}'))
@@ -219,6 +319,54 @@ $builder = (new QueryBuilder('companies'))
     ->selectField('serialNumber');
 $gql = $builder->getQuery();
 ```
+
+As with the Query class, an alias can be set using the second constructor argument.
+
+```php
+$builder = (new QueryBuilder('companies', 'CompanyAlias'))
+    ->selectField('name')
+    ->selectField('serialNumber');
+
+$gql = $builder->getQuery();
+```
+
+Or via the setter method
+
+```php
+$builder = (new QueryBuilder('companies'))
+    ->setAlias('CompanyAlias')
+    ->selectField('name')
+    ->selectField('serialNumber');
+
+$gql = $builder->getQuery();
+```
+
+### The Full Form
+
+Just like the Query class, the QueryBuilder class can be written in full form to
+enable writing multiple queries under one query builder object. Below is an
+example for how the full form can be used with the QueryBuilder:
+
+```php
+$builder = (new QueryBuilder())
+    ->setVariable('namePrefix', 'String', true)
+    ->selectField(
+        (new QueryBuilder('companies'))
+            ->setArgument('filter', new RawObject('{name_starts_with: $namePrefix}'))
+            ->selectField('name')
+            ->selectField('serialNumber')
+    )
+    ->selectField(
+        (new QueryBuilder('company'))
+            ->setArgument('serialNumber', 123)
+            ->selectField('name')
+    );
+$gql = $builder->getQuery();
+```
+
+This query is an extension to the query in the previous example. It returns all
+companies starting with a name prefix and returns the company with the
+`serialNumber` of value 123, both in the same response.
 
 # Constructing The Client
 
@@ -231,7 +379,7 @@ to the GraphQL server.
 
 Example:
 
-```
+```php
 $client = new Client(
     'http://api.graphql.com',
     ['Authorization' => 'Basic xyz']
@@ -239,11 +387,13 @@ $client = new Client(
 ```
 
 
-The Client constructor also receives an optional "httpOptions" array, which **overrides** the "authorizationHeaders" and can be used to add custom [Guzzle HTTP Client request options](https://guzzle.readthedocs.io/en/latest/request-options.html).
+The Client constructor also receives an optional "httpOptions" array, which
+**overrides** the "authorizationHeaders" and can be used to add custom
+[Guzzle HTTP Client request options](https://guzzle.readthedocs.io/en/latest/request-options.html).
 
 Example:
 
-```
+```php
 $client = new Client(
     'http://api.graphql.com',
     [],
@@ -265,6 +415,20 @@ $client = new Client(
 );
 ```
 
+
+It is possible to use your own preconfigured HTTP client that implements the [PSR-18 interface](https://www.php-fig.org/psr/psr-18/).
+
+Example:
+
+```php
+$client = new Client(
+    'http://api.graphql.com',
+    [],
+    [],
+    $myHttpClient
+);
+```
+
 # Running Queries
 
 ## Result Formatting
@@ -272,15 +436,15 @@ $client = new Client(
 Running query with the GraphQL client and getting the results in object
 structure:
 
-```
+```php
 $results = $client->runQuery($gql);
-$results->getData()->Company[0]->branches;
+$results->getData()->companies[0]->branches;
 ```
 Or getting results in array structure:
 
-```
+```php
 $results = $client->runQuery($gql, true);
-$results->getData()['Company'][1]['branches']['address']
+$results->getData()['companies'][1]['branches']['address'];
 ```
 
 ## Passing Variables to Queries
@@ -289,7 +453,7 @@ Running queries containing variables requires passing an associative array which
 maps variable names (keys) to variable values (values) to the `runQuery` method.
 Here's an example:
 
-```
+```php
 $gql = (new Query('companies'))
     ->setVariables(
         [
@@ -315,7 +479,7 @@ returned objects, receive arguments, and can have sub-fields.
 
 Here's a sample example on how to construct and run mutations:
 
-```
+```php
 $mutation = (new Mutation('createCompany'))
     ->setArguments(['companyObject' => new RawObject('{name: "Trial Company", employees: 200}')])
     ->setSelectionSet(
@@ -336,7 +500,7 @@ Mutations can utilize the variables in the same way Queries can. Here's an
 example on how to use the variables to pass input objects to the GraphQL server
 dynamically:
 
-```
+```php
 $mutation = (new Mutation('createCompany'))
     ->setVariables([new Variable('company', 'CompanyInputObject', true)])
     ->setArguments(['companyObject' => '$company']);
@@ -349,7 +513,7 @@ $client->runQuery(
 
 These are the resulting mutation and the variables passed with it:
 
-```
+```php
 mutation($company: CompanyInputObject!) {
   createCompany(companyObject: $company)
 }
@@ -368,7 +532,7 @@ API link: https://graphql-pokemon.now.sh/
 
 This query retrieves any pokemon's evolutions and their attacks:
 
-```
+```php
 query($name: String!) {
   pokemon(name: $name) {
     id
@@ -398,7 +562,7 @@ query($name: String!) {
 That's how this query can be written using the query class and run using the
 client:
 
-```
+```php
 $client = new Client(
     'https://graphql-pokemon.now.sh/'
 );
@@ -447,7 +611,7 @@ print_r($results->getData()['pokemon']);
 Or alternatively, That's how this query can be generated using the QueryBuilder
 class:
 
-```
+```php
 $client = new Client(
     'https://graphql-pokemon.now.sh/'
 );
@@ -489,7 +653,7 @@ Although not the primary goal of this package, but it supports running raw
 string queries, just like any other client using the `runRawQuery` method in the
 `Client` class. Here's an example on how to use it:
 
-```
+```php
 $gql = <<<QUERY
 query {
     pokemon(name: "Pikachu") {
@@ -507,5 +671,5 @@ query {
 }
 QUERY;
 
-$results = $client->runQuery($gql);
+$results = $client->runRawQuery($gql);
 ```

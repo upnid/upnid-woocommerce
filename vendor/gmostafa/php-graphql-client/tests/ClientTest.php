@@ -4,6 +4,7 @@ namespace GraphQL\Tests;
 
 use GraphQL\Client;
 use GraphQL\Exception\QueryError;
+use GraphQL\Exception\MethodNotSupportedException;
 use GraphQL\QueryBuilder\QueryBuilder;
 use GraphQL\RawObject;
 use GuzzleHttp\Exception\ClientException;
@@ -41,12 +42,14 @@ class ClientTest extends TestCase
     {
         $this->mockHandler = new MockHandler();
         $handler = HandlerStack::create($this->mockHandler);
-        $this->client      = new MockClient('', $handler);
+        $this->client      = new Client('', [], ['handler' => $handler]);
     }
 
     /**
      * @covers \GraphQL\Client::__construct
      * @covers \GraphQL\Client::runRawQuery
+     * @covers \GraphQL\Util\GuzzleAdapter::__construct
+     * @covers \GraphQL\Util\GuzzleAdapter::sendRequest
      */
     public function testConstructClient()
     {
@@ -60,22 +63,24 @@ class ClientTest extends TestCase
         $mockHandler->append(new Response(200));
         $mockHandler->append(new Response(200));
         $mockHandler->append(new Response(200));
+        $mockHandler->append(new Response(200));
 
-        $client = new MockClient('', $handler);
+        $client = new Client('', [], ['handler' => $handler]);
         $client->runRawQuery('query_string');
 
-        $client = new MockClient('', $handler, ['Authorization' => 'Basic xyz']);
+        $client = new Client('', ['Authorization' => 'Basic xyz'], ['handler' => $handler]);
         $client->runRawQuery('query_string');
 
-        $client = new MockClient('', $handler);
+        $client = new Client('', [], ['handler' => $handler]);
         $client->runRawQuery('query_string',  false, ['name' => 'val']);
 
-        $client = new MockClient('', $handler, ['Authorization' => 'Basic xyz'], ['headers' => [ 'Authorization' => 'Basic zyx', 'User-Agent' => 'test' ]]);
+        $client = new Client('', ['Authorization' => 'Basic xyz'], ['handler' => $handler, 'headers' => [ 'Authorization' => 'Basic zyx', 'User-Agent' => 'test' ]]);
         $client->runRawQuery('query_string');
 
         /** @var Request $firstRequest */
         $firstRequest = $container[0]['request'];
         $this->assertEquals('{"query":"query_string","variables":{}}', $firstRequest->getBody()->getContents());
+        $this->assertSame('POST', $firstRequest->getMethod());
 
         /** @var Request $thirdRequest */
         $thirdRequest = $container[1]['request'];
@@ -95,6 +100,16 @@ class ClientTest extends TestCase
         $this->assertNotEmpty($fourthRequest->getHeader('User-Agent'));
         $this->assertEquals(['Basic zyx'], $fourthRequest->getHeader('Authorization'));
         $this->assertEquals(['test'], $fourthRequest->getHeader('User-Agent'));
+    }
+
+    /**
+     * @covers \GraphQL\Client::__construct
+     * @covers \GraphQL\Exception\MethodNotSupportedException
+     */
+    public function testConstructClientWithGetRequestMethod()
+    {
+        $this->expectException(MethodNotSupportedException::class);
+        $client = new Client('', [], [], null, 'GET');
     }
 
     /**

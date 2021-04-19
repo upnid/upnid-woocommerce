@@ -2,12 +2,10 @@
 
 namespace GraphQL\Tests;
 
-use GraphQL\Exception\EmptySelectionSetException;
 use GraphQL\InlineFragment;
 use GraphQL\Query;
 use GraphQL\QueryBuilder\QueryBuilder;
 use GraphQL\RawObject;
-use GraphQL\Variable;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -51,14 +49,41 @@ field_one
     }
 
     /**
-     * @covers \GraphQL\QueryBuilder\QueryBuilder::getQuery
-     * @covers \GraphQL\QueryBuilder\AbstractQueryBuilder::getQuery
-     * @covers \GraphQL\Exception\EmptySelectionSetException
+     * @covers \GraphQL\QueryBuilder\QueryBuilder::__construct
+     * @covers \GraphQL\QueryBuilder\AbstractQueryBuilder::__construct
      */
-    public function testEmptySelectionSet()
+    public function testConstructWithAlias()
     {
-        $this->expectException(EmptySelectionSetException::class);
-        $this->queryBuilder->getQuery();
+        $builder = new QueryBuilder('Object', 'ObjectAlias');
+        $builder->selectField('field_one');
+        $this->assertEquals(
+            'query {
+ObjectAlias: Object {
+field_one
+}
+}',
+            (string) $builder->getQuery()
+        );
+    }
+
+    /**
+     * @covers \GraphQL\QueryBuilder\QueryBuilder::__construct
+     * @covers \GraphQL\QueryBuilder\AbstractQueryBuilder::__construct
+     * @covers \GraphQL\QueryBuilder\AbstractQueryBuilder::setAlias
+     */
+    public function testSetAlias()
+    {
+        $builder = (new QueryBuilder('Object'))
+            ->setAlias('ObjectAlias');;
+        $builder->selectField('field_one');
+        $this->assertEquals(
+            'query {
+ObjectAlias: Object {
+field_one
+}
+}',
+            (string) $builder->getQuery()
+        );
     }
 
     /**
@@ -170,6 +195,34 @@ some_field
 }',
             (string) $this->queryBuilder->getQuery()
         );
+    }
+
+    /**
+     * @covers \GraphQL\QueryBuilder\QueryBuilder::__construct
+     * @covers \GraphQL\QueryBuilder\QueryBuilder::getQuery
+     * @covers \GraphQL\QueryBuilder\QueryBuilder::selectField
+     */
+    public function testQueryBuilderWithoutFieldName()
+    {
+        $builder = (new QueryBuilder())
+            ->selectField(
+            (new QueryBuilder('Object'))
+                ->selectField('one')
+        )
+            ->selectField(
+                (new QueryBuilder('Another'))
+                    ->selectField('two')
+            );
+
+        $this->assertEquals('query {
+Object {
+one
+}
+Another {
+two
+}
+}',
+            (string) $builder->getQuery());
     }
 
     /**

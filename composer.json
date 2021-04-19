@@ -1,5 +1,5 @@
 {
     "require": {
-        "gmostafa/php-graphql-client": "^1.4"
+        "gmostafa/php-graphql-client": "^1.10"
     }
 }
